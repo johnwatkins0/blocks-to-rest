@@ -16,11 +16,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12
-    - name: npm install
+    - name: npm lint
       run: |
         npm install
-    - name: lint
-      run: npm run lint:js
+        npm run lint:js
      
   test_php:
     runs-on: ubuntu-latest
