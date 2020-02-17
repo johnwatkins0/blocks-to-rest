@@ -18,7 +18,7 @@ jobs:
         node-version: 12
     - name: npm lint
       run: |
-        npm update
+        npm install
         npm run lint:js
      
   test_php:

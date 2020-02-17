@@ -6,7 +6,8 @@
 	"devDependencies": {
 		"@wordpress/scripts": "^7.1.0",
 		"husky": "^4.2.3",
-		"lint-staged": "^10.0.7"
+		"lint-staged": "^10.0.7",
+		"prettier": "npm:wp-prettier@1.19.1"
 	},
 	"husky": {
 		"hooks": {
