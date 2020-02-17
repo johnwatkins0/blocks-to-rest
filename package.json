@@ -6,7 +6,8 @@
 	"devDependencies": {
 		"@wordpress/scripts": "^7.1.0",
 		"husky": "^4.2.3",
-		"lint-staged": "^10.0.7"
+		"lint-staged": "^10.0.7",
+		"prettier": "^1.19.1"
 	},
 	"husky": {
 		"hooks": {
@@ -14,23 +15,11 @@
 		}
 	},
 	"lint-staged": {
-		"packages/*/package.json": [
-			"wp-scripts lint-pkg-json"
-		],
-		"*.scss": [
-			"wp-scripts lint-style"
+		"*.php": [
+			"phpcs"
 		],
 		"*.js": [
-			"wp-scripts format-js",
 			"wp-scripts lint-js"
-		],
-		"{docs/{toc.json,tool/*.js},packages/{*/README.md,*/src/{actions,selectors}.js,components/src/*/**/README.md}}": [
-			"node ./docs/tool/index.js",
-			"node ./docs/tool/are-data-files-unstaged.js"
-		],
-		"packages/**/*.js": [
-			"node ./bin/api-docs/update-readmes.js",
-			"node ./bin/api-docs/are-readmes-unstaged.js"
 		]
 	}
 }
