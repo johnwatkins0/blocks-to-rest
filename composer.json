@@ -1,0 +1,14 @@
+{
+	"name": "10up/blocks-to-rest",
+	"description": "Sends structured Gutenberg block data to REST",
+	"type": "wordpress-plugin",
+	"require": {
+		"php": ">=7.1"
+	},
+	"require-dev": {
+		"10up/phpcs-composer": "dev-master"
+	},
+	"scripts": {
+		"lint": "phpcs ."
+	}
+}
