@@ -31,11 +31,17 @@ function this_wordpress_supports_nonscalar_post_meta() {
  * Enqueues block editor script.
  */
 function enqueue_script() {
+	if ( ! file_exists( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'index.asset.php' ) ) {
+		return;
+	}
+
+	$script_data = include trailingslashit( plugin_dir_path( __FILE__ ) ) . 'index.asset.php';
+
 	wp_enqueue_script(
 		'blocks-to-rest',
-		trailingslashit( plugin_dir_url( __FILE__ ) ) . 'dist/main.js',
-		[ 'lodash', 'wp-data' ],
-		filemtime( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'dist/main.js' ),
+		trailingslashit( plugin_dir_url( __FILE__ ) ) . 'build/index.js',
+		$script_data['dependencies'],
+		$script_data['version'],
 		true
 	);
 
