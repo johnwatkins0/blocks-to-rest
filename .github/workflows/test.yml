@@ -15,8 +15,9 @@ jobs:
     - name: install node v12
       uses: actions/setup-node@v1
       with:
-        node-version: 11
+        node-version: 12
     - name: npm install
+      run: rm -rf node_modules
       run: npm install
     - name: lint
       run: npm run lint:js
