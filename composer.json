@@ -1,0 +1,13 @@
+{
+	"name": "johnwatkins/blocks-to-rest",
+	"description": "Sends structured Gutenberg block data to REST",
+	"type": "wordpress-plugin",
+	"require": {
+		"php": ">=7.1"
+	},
+	"require-dev": {
+	},
+	"scripts": {
+		"lint": "phpcs ."
+	}
+}
