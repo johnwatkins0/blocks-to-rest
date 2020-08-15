@@ -19,7 +19,7 @@ function Edit( { setAttributes } ) {
 
 		const currentBlocks = select( 'core/editor' )
 			.getEditorBlocks()
-			.filter( ( { name } ) => name !== 'tmobile/blocks-to-rest' )
+			.filter( ( { name } ) => name !== 'johnwatkins0/blocks-to-rest' )
 			.map( ( { clientId, name, attributes, innerBlocks } ) => ( {
 				clientId,
 				name,
@@ -43,12 +43,12 @@ function Edit( { setAttributes } ) {
 
 	return (
 		<style>
-			{ '[data-type="tmobile/blocks-to-rest"] { display: none; }' }
+			{ '[data-type="johnwatkins0/blocks-to-rest"] { display: none; }' }
 		</style>
 	);
 }
 
-registerBlockType( 'tmobile/blocks-to-rest', {
+registerBlockType( 'johnwatkins0/blocks-to-rest', {
 	attributes: {
 		blocks: {
 			type: 'array',
@@ -86,14 +86,14 @@ function Inserter() {
 	useEffect( () => {
 		if ( ! inserted && blocks && blocks.length ) {
 			for ( const block of blocks ) {
-				if ( block.name === 'tmobile/blocks-to-rest' ) {
+				if ( block.name === 'johnwatkins0/blocks-to-rest' ) {
 					setInserted( true );
 					return;
 				}
 			}
 
 			dispatch( 'core/block-editor' ).insertBlock(
-				createBlock( 'tmobile/blocks-to-rest' )
+				createBlock( 'johnwatkins0/blocks-to-rest' )
 			);
 			setInserted( true );
 		}
