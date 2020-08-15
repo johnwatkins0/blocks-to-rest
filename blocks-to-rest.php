@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Blocks to Rest
  * Description: Sends structured Gutenberg block data to REST.
- * Version: 1.0
+ * Version: 2.0
  *
  * @package blocks-to-rest
  */
